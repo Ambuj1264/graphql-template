@@ -1,0 +1,16 @@
+node_modules
+pgdata/*
+.env*
+tmp/*
+dump*
+env.yaml
+yarn.lock
+.gc-creds*
+.local_scripts
+.nyc_output/
+.DS_Store
+yarn-error.log
+# testing
+/coverage/lcov-report/*
+/coverage/clover.xml
+/coverage/coverage-final.json

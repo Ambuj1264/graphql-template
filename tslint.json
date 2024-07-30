@@ -1,0 +1,84 @@
+{
+    "rules": {
+        "class-name": true,
+        
+        "comment-format": [
+            true,
+            "check-space"
+        ],
+        "indent": [
+            true,
+            "spaces"
+        ],
+        "no-duplicate-variable": true,
+        "no-eval": true,
+        "no-internal-module": true,
+        "no-var-keyword": true,
+        "one-line": [
+            true,
+            "check-open-brace",
+            "check-whitespace"
+        ],
+        "quotemark": [
+            true,
+            "double"
+        ],
+        "semicolon": [true],
+        "triple-equals": [
+            true,
+            "allow-null-check"
+        ],
+        "typedef-whitespace": [
+            true,
+            {
+                "call-signature": "nospace",
+                "index-signature": "nospace",
+                "parameter": "nospace",
+                "property-declaration": "nospace",
+                "variable-declaration": "nospace"
+            }
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format",
+            "allow-pascal-case",
+            "allow-leading-underscore",
+            "allow-snake-case",
+            "allow-trailing-underscore",
+            "require-const-for-all-caps"
+        ],
+        "whitespace": [
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-separator",
+            "check-type"
+        ],
+        "no-unnecessary-callback-wrapper": true,
+        "no-boolean-literal-compare": true,
+        "no-string-literal": true,
+        "prefer-const": true,
+        "interface-over-type-literal": true,
+        "no-conditional-assignment": true,
+        "no-console": [true, "log", "error", "debug", "info"],
+        "no-debugger": true,
+        "max-line-length": [true, 120],
+        "no-empty": true,
+        "no-shadowed-variable": true,
+        "no-duplicate-imports": true,
+        "newline-before-return": true,
+        "import-spacing": true,
+        "no-consecutive-blank-lines": true,
+        "no-unnecessary-type-assertion": true,
+        "prefer-method-signature": true,
+        "no-parameter-reassignment": true,
+        "no-unnecessary-else": true,
+        "no-unnecessary-field-initialization": true,
+        "strict-boolean-expressions": false,
+        "strict-null-checks": true,
+        "curly": [true, "ignore-same-line"],
+        "linebreak-style": [true, "LF"]
+    }
+}

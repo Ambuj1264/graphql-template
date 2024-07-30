@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  postgresSchedulingApp:
+    image: postgres:14.1-alpine
+    expose:
+      - "5434"
+    container_name: postgresSchedulingApp
+    ports:
+      - "5434:5434"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: schedulingApp 
+    volumes:
+      - db:/var/lib/postgresql/data
+    command: -p 5434
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4719:4719"
+    restart: always
+    depends_on:
+      - postgresSchedulingApp
+    environment:
+      - DB_NAME = schedulingApp
+      - DB_PORT = 5434
+      - DB_PASSWORD = postgres
+      - DB_HOST = localhost
+      - DB_USER = postgres
+      - DATABASE_URL = process.env.DB_URL
+    volumes:
+      - ./:/src
+      - /node_modules
+volumes:
+  db:
+    driver: local

@@ -1,0 +1,16 @@
+image:
+  name: sonarsource/sonar-scanner-cli:latest
+  entrypoint: [""]
+variables:
+  SONAR_TOKEN: "${SONAR_TOKEN}"
+  SONAR_HOST_URL: "${SONAR_HOST_URL}"
+  GIT_DEPTH: 0
+sonarqube-check:
+  stage: test
+  script:
+    - sonar-scanner -X -Dsonar.sources=. -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.password=$SONAR_PASSWORD -Dsonar.token=SONAR_TOKEN -Dsonar.projectKey=schedulingapp-api -Dsonar.language=js -Dsonar.qualitygate.wait=true -Dsonar.gitlab.max_major_issues_gate=0
+  allow_failure: false
+  tags: [linux]
+  only:
+    - merge_requests
+    - main 
